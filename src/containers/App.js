@@ -28,7 +28,6 @@ class App extends Component {
   }
 
   render() {
-    console.log(`rendering App with ${this.state.robots.length} robots`);
     const { robots, searchTerm } = this.state;
 
     if (robots.length === 0) {
