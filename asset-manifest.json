@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/robopals/static/css/main.f6eb6570.css",
+    "main.js": "/robopals/static/js/main.ea3b4210.js",
+    "static/js/787.3737198c.chunk.js": "/robopals/static/js/787.3737198c.chunk.js",
+    "static/media/SEGA.woff": "/robopals/static/media/SEGA.47b4bfa94ef243af4a5b.woff",
+    "index.html": "/robopals/index.html",
+    "main.f6eb6570.css.map": "/robopals/static/css/main.f6eb6570.css.map",
+    "main.ea3b4210.js.map": "/robopals/static/js/main.ea3b4210.js.map",
+    "787.3737198c.chunk.js.map": "/robopals/static/js/787.3737198c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f6eb6570.css",
+    "static/js/main.ea3b4210.js"
+  ]
+}
