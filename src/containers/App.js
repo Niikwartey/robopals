@@ -2,6 +2,7 @@ import React, { Component }  from 'react';
 import CardList from '../components/CardList';
 import SearchBox from '../components/SearchBox';
 import Scroll from '../components/Scroll';
+import ErrorBoundary from '../components/ErrorBoundary';
 
 const ROBOTS_URL = 'https://jsonplaceholder.typicode.com/users';
 
@@ -21,8 +22,6 @@ class App extends Component {
   }
 
   handleSubmitSearch(event) {
-    console.log("search submitted");
-
     this.setState({
       searchTerm: event.target.value
     });
@@ -52,7 +51,9 @@ class App extends Component {
             handleSubmitSearch={this.handleSubmitSearch.bind(this)}
           />
           <Scroll>
-            <CardList robots={filteredRobots} />
+            <ErrorBoundary>
+              <CardList robots={filteredRobots} />
+            </ErrorBoundary>
           </Scroll>
         </div>
       );
