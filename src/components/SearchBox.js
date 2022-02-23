@@ -1,4 +1,6 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import { updateSearchTerm } from '../actions';
 
 const SearchBox = ({ handleSubmitSearch }) => {
   return (
@@ -13,4 +15,16 @@ const SearchBox = ({ handleSubmitSearch }) => {
   );
 };
 
-export default SearchBox;
+const mapDispatchTopProps = (dispatch) => {
+  return {
+    handleSubmitSearch: (event) => {
+      let action = updateSearchTerm(event.target.value);
+      dispatch(action);
+    }
+  }
+}
+const mapStateToProps = (state) => {
+  return { value : state.searchRobots.SearchTerm };
+}
+
+export default connect(mapStateToProps, mapDispatchTopProps)(SearchBox);

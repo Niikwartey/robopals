@@ -1,63 +1,57 @@
-import React, { Component }  from 'react';
+import React, { useEffect }  from 'react';
+import { connect } from "react-redux";
 import CardList from '../components/CardList';
 import SearchBox from '../components/SearchBox';
 import Scroll from '../components/Scroll';
 import ErrorBoundary from '../components/ErrorBoundary';
+import { requestRobots } from '../actions';
 
-const ROBOTS_URL = 'https://jsonplaceholder.typicode.com/users';
+function App(props) {
+  const { 
+    robots,
+    handleRequestRobots,
+    searchTerm,
+  } = props;
 
-class App extends Component {
-  constructor() {
-    super();
-    this.state = {
-      robots: [],
-      searchTerm: '',
-    }
-  }
-
-  componentDidMount() {
-    fetch(ROBOTS_URL)
-      .then(res => res.json())
-      .then(robots => this.setState({ robots }));
-  }
-
-  handleSubmitSearch(event) {
-    this.setState({
-      searchTerm: event.target.value
-    });
-  }
-
-  render() {
-    const { robots, searchTerm } = this.state;
-
-    if (robots.length === 0) {
-      return (
-        <div className='tc'>
-          <h1 className='f1'>RoboPals</h1>
-          <h2>loading...</h2>
-        </div>
-      );
-    } else {
-      const filteredRobots = robots.filter(robot => {
-        return robot.username.toLowerCase().includes(searchTerm.toLowerCase());
-      })
+  useEffect(handleRequestRobots, []);
   
-      return (
-        <div className='tc'>
-          <h1 className='f1'>RoboPals</h1>
-          <SearchBox 
-            searchTerm={searchTerm}
-            handleSubmitSearch={this.handleSubmitSearch.bind(this)}
-          />
-          <Scroll>
-            <ErrorBoundary>
-              <CardList robots={filteredRobots} />
-            </ErrorBoundary>
-          </Scroll>
-        </div>
-      );
+  const filteredRobots = robots.filter(robot => {
+    return robot.username.toLowerCase().includes(searchTerm.toLowerCase());
+  })
+
+  return (
+    <div className='tc'>
+      <h1 className='f1'>RoboPals</h1>
+      {
+        robots.length === 0 ? 
+          <h2>loading...</h2> : (
+          <>
+            <SearchBox />
+            <Scroll>
+              <ErrorBoundary>
+                <CardList robots={filteredRobots} />
+              </ErrorBoundary>
+            </Scroll>
+          </>
+        )
+      }
+    </div>
+  );
+}
+
+const mapStateToProps = (state) => {
+  return {
+    robots: state.requestRobots.robots,
+    searchTerm: state.searchRobots.searchTerm,
+  }
+}
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    handleRequestRobots: () => {
+      dispatch(requestRobots);
     }
   }
-};
+}
 
-export default App;
+export default connect(mapStateToProps, mapDispatchToProps)(App);
