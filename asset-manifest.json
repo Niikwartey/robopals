@@ -1,17 +1,18 @@
 {
-  "files": {
-    "main.css": "/robopals/static/css/main.f6eb6570.css",
-    "main.js": "/robopals/static/js/main.11867866.js",
-    "static/js/787.3737198c.chunk.js": "/robopals/static/js/787.3737198c.chunk.js",
-    "service-worker.js": "/robopals/service-worker.js",
-    "static/media/SEGA.woff": "/robopals/static/media/SEGA.47b4bfa94ef243af4a5b.woff",
-    "index.html": "/robopals/index.html",
-    "main.f6eb6570.css.map": "/robopals/static/css/main.f6eb6570.css.map",
-    "main.11867866.js.map": "/robopals/static/js/main.11867866.js.map",
-    "787.3737198c.chunk.js.map": "/robopals/static/js/787.3737198c.chunk.js.map"
-  },
-  "entrypoints": [
-    "static/css/main.f6eb6570.css",
-    "static/js/main.11867866.js"
-  ]
+  "main.css": "/robopals/static/css/main.3cc0bb55.chunk.css",
+  "main.js": "/robopals/static/js/main.ccc8261d.chunk.js",
+  "main.js.map": "/robopals/static/js/main.ccc8261d.chunk.js.map",
+  "static/js/1.709d58a2.chunk.js": "/robopals/static/js/1.709d58a2.chunk.js",
+  "static/js/1.709d58a2.chunk.js.map": "/robopals/static/js/1.709d58a2.chunk.js.map",
+  "static/css/2.22ab8d0f.chunk.css": "/robopals/static/css/2.22ab8d0f.chunk.css",
+  "static/js/2.c10cd2c5.chunk.js": "/robopals/static/js/2.c10cd2c5.chunk.js",
+  "static/js/2.c10cd2c5.chunk.js.map": "/robopals/static/js/2.c10cd2c5.chunk.js.map",
+  "runtime~main.js": "/robopals/static/js/runtime~main.c18bb781.js",
+  "runtime~main.js.map": "/robopals/static/js/runtime~main.c18bb781.js.map",
+  "static/media/index.css": "/robopals/static/media/SEGA.12a3db8b.woff",
+  "static/css/main.3cc0bb55.chunk.css.map": "/robopals/static/css/main.3cc0bb55.chunk.css.map",
+  "static/css/2.22ab8d0f.chunk.css.map": "/robopals/static/css/2.22ab8d0f.chunk.css.map",
+  "index.html": "/robopals/index.html",
+  "precache-manifest.323304a9fda0c010d362d575e95a65d7.js": "/robopals/precache-manifest.323304a9fda0c010d362d575e95a65d7.js",
+  "service-worker.js": "/robopals/service-worker.js"
 }
